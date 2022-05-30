@@ -35,7 +35,7 @@ function submitUser() {
             role: user.value.role,
             photo: user.value.photo
         }
-        let newData = [...data.users];
+        let newData = data.users != null ? [...data.users] : [];
         newData.push(newUser);
         data.$patch((state) => {
             state.users = [...newData];
