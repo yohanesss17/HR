@@ -23,8 +23,8 @@ function closeCreate() {
             <Sidebar />
             <div
                 class="flex flex-col h-screen pl-[1rem] lg:pl-[2rem] pr-[1rem] lg:pr-[2rem] lg:space-y-4 container mx-auto">
-                <Navbar :open="this.open" @openCreate="changeOpenValue" />
-                <Content :open="this.open" @openCreate="changeOpenValue" />
+                <Navbar :open="open" @openCreate="changeOpenValue" />
+                <Content :open="open" @openCreate="changeOpenValue" />
             </div>
                 <CreateUser :open="open" @closeCreate="closeCreate" />
         </div>
