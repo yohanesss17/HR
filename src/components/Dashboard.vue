@@ -21,13 +21,12 @@ function closeCreate() {
     <div class="h-screen overflow-hidden">
         <div class="flex items-start">
             <Sidebar />
-            <div class="flex flex-col h-screen pl-[1rem] lg:pl-[2rem] pr-[1rem] lg:pr-[2rem] lg:space-y-4 container mx-auto">
+            <div
+                class="flex flex-col h-screen pl-[1rem] lg:pl-[2rem] pr-[1rem] lg:pr-[2rem] lg:space-y-4 container mx-auto">
                 <Navbar :open="this.open" @openCreate="changeOpenValue" />
                 <Content :open="this.open" @openCreate="changeOpenValue" />
             </div>
-            <Transition name="slide-fade">
                 <CreateUser :open="open" @closeCreate="closeCreate" />
-            </Transition>
         </div>
     </div>
 
@@ -46,5 +45,4 @@ function closeCreate() {
     transform: translateX(20px);
     opacity: 0;
 }
-
 </style>
