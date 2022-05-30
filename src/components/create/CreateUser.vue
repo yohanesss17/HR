@@ -6,7 +6,7 @@ import Form from '../form/Form.vue';
 let props = defineProps({
     open: Boolean,
 })
-let emit = defineEmits(['showsidebar'])
+let emit = defineEmits(['closeCreate'])
 
 let invalid = ref({
     'name': false,
@@ -50,7 +50,6 @@ function submitUser() {
         }, 3500)
 
         emit('closeCreate')
-
     }
 }
 
