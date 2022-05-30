@@ -7,7 +7,6 @@ import { useUsersStore } from '../../../stores/users';
 
 const data = useUsersStore();
 
-let userList = [...data.realUsers];
 let menu = ref('card');
 let search = ref('');
 
@@ -30,7 +29,7 @@ function searchFor(toSearch) {
 
 watch(search, (newSearch) => {
     data.$patch((state) => {
-        state.users = userList;
+        state.users = [...data.realUsers];
     })
 
     let temp = []
@@ -74,7 +73,7 @@ watch(search, (newSearch) => {
         </div>
 
         <div class="basis-full lg:mt-[20px] px-[1rem] py-[0.75rem] h-[350px] lg:h-[450px] flex items-center justify-center rounded-[10px]"
-            v-if="data.users.length == 0">
+            v-if="data.users == null">
             <Empty />
         </div>
 
